@@ -1,0 +1,9 @@
+packages:
+    ./
+
+-- lowering or disabling optimization makes the bug disappear
+optimization: 2
+-- optimization: 1
+-- optimization: 0
+
+allow-newer: streamly-core

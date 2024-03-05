@@ -1,0 +1,46 @@
+cabal-version: 1.12
+name:           test-bug
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/demaledetti/test-bug#readme>
+homepage:       https://github.com/demaledetti/test-bug#readme
+bug-reports:    https://github.com/demaledetti/test-bug/issues
+author:         Stefano Debenedetti
+maintainer:     44903077+demaledetti@users.noreply.github.com
+copyright:      2024 Stefano Debenedetti
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    cabal.project
+    cabal.project.freeze
+
+source-repository head
+  type: git
+  location: https://github.com/demaledetti/test-bug
+
+library
+  exposed-modules:
+      TestBug
+      TestBug.Data
+      TestBug.Parser
+      TestBug.Parser.One
+      TestBug.Parser.Two
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wunused-packages -dcore-lint
+  build-depends:
+      base >=4.7 && <5
+    , streamly-core
+  default-language: GHC2021
+
+executable testbug
+  main-is: Main.hs
+  hs-source-dirs:
+      testbug
+  ghc-options: -Wall -Wunused-packages -dcore-lint
+  build-depends:
+      base >=4.7 && <5
+    , streamly-core
+    , test-bug
+  default-language: GHC2021
